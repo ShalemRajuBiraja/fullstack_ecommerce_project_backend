@@ -24,8 +24,7 @@ public class CorsConfig {
                                 "POST",
                                 "PUT",
                                 "DELETE")
-                        .allowedHeaders("Authorization");
-            }
+                        .allowedHeaders("AUTHORIZATION", "CONTENT-TYPE");            }
         };
     }
 }

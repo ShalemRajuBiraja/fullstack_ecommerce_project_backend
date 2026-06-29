@@ -16,9 +16,10 @@ public class SecurityConfig {
 		
 		http
 		.csrf(csrf -> csrf.disable())
+//		.cors(cors -> {})
 		.authorizeHttpRequests( auth -> auth
-				                            //.requestMatchers("/auth/login").permitAll()
-				                            .requestMatchers("/products").permitAll()
+				                            .requestMatchers("/auth/login").permitAll()
+				                            .requestMatchers("auth/create-account").permitAll()				                            .requestMatchers("/products").permitAll()
 				                            .anyRequest().authenticated() )
 		.sessionManagement( Session -> Session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		
