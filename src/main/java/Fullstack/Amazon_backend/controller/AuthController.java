@@ -20,7 +20,7 @@ public class AuthController {
 	@Autowired
 	AuthService authService;
 	
-	@PostMapping("auth/create-account")
+	@PostMapping("/auth/create-account")
 	public Object signup( @Valid @RequestBody SignupApiData signupApiData) throws Exception {
 		
 				authService.signupFunction(signupApiData);
@@ -34,7 +34,7 @@ public class AuthController {
 	
 	@PostMapping("/auth/login")
 	public  ApiResponse<Map<String, Object>> login ( @Valid @RequestBody LoginApiData loginApiData) throws Exception {
-		
+		System.out.println("Login API called with email: " + loginApiData);
 		 Map<String, Object> authServiceResponseMap = authService.LoginFunction(loginApiData);
 		 
 		 ApiResponse<Map<String, Object>> apiResponse = new ApiResponse<>(true, AuthConstants.SUCCESS_LOGIN_STRING, authServiceResponseMap);

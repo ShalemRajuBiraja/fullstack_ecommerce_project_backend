@@ -54,7 +54,7 @@ public class AuthService {
         
     }
     
-// 2. CREATE ACCOUNT FUNCTION
+// 2. LOGINING INTO WEBSITE 
     public Map<String, Object> LoginFunction(LoginApiData loginApiData) throws Exception {
     	
     	
